@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuário Médico Completo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="prontuariopaciente.css">
+    <link rel="icon" type="image/x-icon" href="nonono_2.ico">
+    <script>
+        function imprimirProntuario() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prontuário Médico</h1>
+            <a href="prontuario2.html" class="btn btn-info">Voltar ao meu prontuario</a>
+            
+        </header>
+        <main id="prontuario">
+        <section class="patient-info">
+            <h2>Informações do Paciente</h2>
+            <p><strong>Nome:</strong> Maria Clara Pereira da Silva</p>
+            <p><strong>Idade:</strong> 25 anos</p>
+            <p><strong>Data de Nascimento:</strong> 10/05/1999</p>
+            <p><strong>Endereço:</strong> Rua Anápio Gomes, 123, Gravataí - RS</p>
+            <p><strong>Telefone:</strong> (11) 98765-4321</p>
+            <p><strong>Nome do Pai:</strong> Carlos Teixeira da Silva</p>
+            <p><strong>Nome da Mãe:</strong> Isabel Pereira da Silva</p>
+            <p><strong>Responsável:</strong> Isabel Pereira da Silva</p>
+        </section>
+
+        <section class="medical-history">
+            <h2>Histórico Médico</h2>
+            <p><strong>Condições Médicas Passadas:</strong> Apendicite quando criança</p>
+            <p><strong>Condições Médicas Atuais:</strong> Internação por Desidratação, Internação para Controle de Pressão</p>
+            <p><strong>Cirurgias Anteriores:</strong> Apendicectomia (2005)</p>
+            <p><strong>Alergias:</strong> Nenhuma</p>
+            <p><strong>Histórico Familiar:</strong> Pai com hipertensão, mãe com diabetes Tipo 2</p>
+        </section>
+
+        <section class="consultations">
+            <h2>Consultas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Especialista</th>
+                        <th>Motivo</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+              
+                    <tr>
+                        <td>10/08/2024</td>
+                        <td>Enf. Nicolly Cardoso (Enfermeira)</td>
+                        <td>Check-Up</td>
+                        <td>Exame de Sangue e Glicemia</td>
+                    </tr>
+                    <tr>
+                        <td>15/07/2024</td>
+                        <td>Dra. Maria Lima (Obstreta)</td>
+                        <td>Exames de imagem</td>
+                        <td>Ultrassonografia 1</td>
+                    </tr>
+           
+                </tbody>
+            </table>
+        </section>
+
+        <section class="treatments">
+            <h2>Tratamentos e Medicamentos</h2>
+            <p><strong>Medicamentos em Uso:</strong></p>
+            <ul>
+                <li>Ácido Fólico - Dosagem: 1 mg - Instruções: Tomar uma vez ao dia</li>
+                <li>Vitamina D - Dosagem: 400 UI - Instruções: Tomar duas vezes ao dia</li>
+                <li>Multivitamínico - Dosagem: 1 comprimido - Instruções: Tomar uma vez ao dia</li>
+            </ul>
+            <p><strong>Tratamentos Anteriores:</strong></p>
+            <ul>
+                <li>Nenhum</li>
+            </ul>
+        </section>
+
+        <section class="notes">
+            <h2>Notas Adicionais</h2>
+            <p></p>
+        </section>
+    </main>
+        <section>
+            <button onclick="imprimirProntuario()">Imprimir Prontuário</button>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Prontuário Digital. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

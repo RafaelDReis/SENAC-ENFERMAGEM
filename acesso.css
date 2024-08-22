@@ -1,0 +1,71 @@
+body {
+    background-color: #f7f9fc;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    margin-bottom: 20px;
+    color: #385A7D;
+}
+
+.form-group label {
+    color: #555;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: #385A7D;
+    border-color: #385A7D;
+}
+
+.btn:hover {
+    background-color: #385a7dd0;
+    border-color: #385a7dd0;
+}
+
+/* Estilo para a setinha de voltar */
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #6e94b8d3;
+}
+
+.back-arrow i {
+    font-size: 30px;
+    transition: color 0.2s;
+}
+
+.back-arrow i:hover {
+    color: #6E94B8;
+}
+
+#emailStatus, #senhaStatus, #cpfStatus {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+footer {
+    position: fixed;   
+    bottom: 0;
+    width: 100%;
+    background-color: #1C344E;
+}
+
+.escritaprincipal {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

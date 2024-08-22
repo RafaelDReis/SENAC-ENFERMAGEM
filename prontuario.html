@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuário Médico Completo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="prontuario.css">
+    <script src="prontuario.js"></script>
+    <link rel="icon" type="image/x-icon" href="nonono_2.ico">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prontuário Médico</h1>
+            <a href="index.html" class="btn btn-primary">Voltar ao Menu Principal</a>
+        </header>
+        
+        <section class="patient-info">
+            <h2>Informações do Paciente</h2>
+            <label for="nome">Nome: </label>
+            <input type="nome" class="form-control" id="nome" placeholder="Digite seu nome" required>
+            <br>
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" onchange="calcularIdade()"> <br>
+
+            <p id="idade">Idade: </p>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" required
+                   onblur="buscarEndereco()"><br><br>
+                   
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" placeholder="Nome da rua" required><br><br>
+    
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" placeholder="Número" required><br><br>
+    
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, bloco, etc."><br><br>
+    
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required><br><br>
+    
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Cidade" required><br><br>
+    
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" placeholder="Estado" required><br><br>
+    
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" 
+                   pattern="\(\d{2}\) \d{5}-\d{4}" required><br><br>
+    
+            <label for="nomePai">Nome do Pai:</label>
+            <input type="text" id="nomePai" name="nomePai" placeholder="Nome completo do pai" required><br><br>
+    
+            <label for="nomeMae">Nome da Mãe:</label>
+            <input type="text" id="nomeMae" name="nomeMae" placeholder="Nome completo da mãe" required><br><br>
+    
+            <label for="nomeResponsavel">Nome do Responsável:</label>
+            <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Nome do responsável legal" required><br><br>
+    
+        </section>
+
+        <section class="medical-history">
+            <h2>Histórico Médico</h2>
+            <label for="condicoesPassadas">Condições Médicas Passadas:</label>
+            <input class="form-control type="text" id="condicoesPassadas" name="condicoesPassadas" placeholder="Descreva condições médicas anteriores"><br>
+    
+            <label for="condicoesAtuais">Condições Médicas Atuais:</label>
+            <input class="form-control type="text" id="condicoesAtuais" name="condicoesAtuais" placeholder="Descreva condições médicas atuais" required> <br>
+    
+            <label for="cirurgiasAnteriores">Cirurgias Anteriores:</label>
+            <input  class="form-control type="text" id="cirurgiasAnteriores" name="cirurgiasAnteriores" placeholder="Liste cirurgias anteriores"> <br>
+    
+            <label for="alergias">Alergias:</label>
+            <input class="form-control type="text" id="alergias" name="alergias" placeholder="Descreva alergias conhecidas"> <br>
+    
+            <label for="historicoFamiliar">Histórico Familiar:</label>
+            <input class="form-control type="text" id="historicoFamiliar" name="historicoFamiliar" placeholder="Descreva histórico médico familiar"><br>
+    
+        </section>
+
+        <section class="consultations">
+            <h2>Consultas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Especialista</th>
+                        <th>Motivo</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="date" id="dataConsulta" name="dataConsulta" required><br><br>
+                        </td>
+                        <td>
+                            <input type="text" id="especialista" name="especialista" placeholder="Nome do especialista" required><br><br>
+                        </td>
+                        <td>
+                            <input type="text" id="motivoConsulta" name="motivoConsulta" placeholder="Descreva o motivo da consulta" required><br><br>
+                        </td>
+                        <td>
+                            <input type="text" id="observacoesMedicas" name="observacoesMedicas" placeholder="Observações feitas pelo médico"><br><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="treatments">
+            <h2>Tratamentos e Medicamentos</h2>
+            <label for="medicamento">Medicamento em Uso:</label>
+            <input type="text" id="medicamento" name="medicamento" placeholder="Nome do medicamento">
+            <button class="botao-bonito" type="button" onclick="adicionarMedicamento()">Adicionar</button>
+            
+            <div class="medicamentos-lista">
+                <div id="listaMedicamentos"></div>
+            </div>
+
+            <label for="tratamento">Tratamento Anterior:</label>
+            <input type="text" id="tratamento" name="tratamento" placeholder="Descrição do tratamento">
+            <button class="botao-bonito" type="button" onclick="adicionarTratamento()">Adicionar</button>
+            
+            <div class="tratamentos-lista">
+            <div id="listaTratamentos"></div>
+                
+
+           
+        </section>
+
+
+        <section class="notes">
+            <label for="nota">Nota sobre a Consulta:</label><br>
+            <input class="form-control" type="text" id="nota" name="nota" placeholder="Digite uma nota sobre a consulta"><br><br>
+           
+        </section>
+
+        
+        <button class="botao-bonito" type="button" onclick="addData()">Adicionar Dados</button>
+        <button class="botao-bonito" type="button" onclick="saveData()">Salvar Dados</button>
+
+
+        <form id="searchForm">
+            <label for="search">Pesquisar por Nome:</label>
+            <input type="text" id="search" name="search">
+            <button class="botao-bonito" type="button" onclick="searchData()">Pesquisar</button>
+        </form>
+        
+        <!-- Exibição dos resultados da pesquisa -->
+        <div class="results">
+            <h2>Resultados da Pesquisa:</h2>
+            <div id="results"></div>
+        </div>
+    
+        <footer>
+            <p>&copy; 2024 Prontuário Digital. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
